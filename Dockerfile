@@ -23,12 +23,6 @@ RUN apt-get update && apt-get install -y \
 # Now make the code directory and get the source code
 RUN mkdir -p /opt/Code/
 RUN wget -P /opt/Code/ http://www.eu.apache.org/dist/cloudstack/releases/4.5.2/apache-cloudstack-4.5.2-src.tar.bz2
-<<<<<<< HEAD
 RUN tar xjvf /opt/Code/apache-cloudstack-4.5.2-src.tar.bz2 -C /opt/Code/
 RUN cd /opt/Code/apache-cloudstack-4.5.2-src/ && mvn -P deps -Dnonoss -DskipTests=true && dpkg-buildpackage -uc -us
 RUN date>>/root/time.txt
-=======
-RUN tar xjf /opt/Code/apache-cloudstack-4.5.2-src.tar.bz2 -C /opt/Code/
-RUN cd /opt/Code/apache-cloudstack-4.5.2-src/ && mvn -P deps -Dnonoss -DskipTests=true 
-RUN cd /opt/Code/apache-cloudstack-4.5.2-src/ && dpkg-buildpackage -uc -us
->>>>>>> c4670d18c8a30b294cad41bc406e1de0f33eced9
